@@ -19,8 +19,8 @@
 // Variables
 // =============================================================================
 
-$alert-margin-vertical:  15px !default;
-$alert-padding:  10px !default;
+$alert-margin-vertical:  1em !default;
+$alert-padding:  0.625em !default;
 $alert-background:  $global-primary !default;
 $alert-color:  #fff !default;
 
@@ -98,6 +98,14 @@ $alert-secondary-color:  $gray !default;
   margin-bottom: 0;
 }
 
+
+/* within am-form-group */
+
+.#{$ns}form-group .#{$ns}alert {
+  margin: 5px 0 0;
+  padding: 0.25em 0.625em;
+  font-size: 1.3rem;
+}
 
 /* Close in alert */
 

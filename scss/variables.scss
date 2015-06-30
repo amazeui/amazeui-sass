@@ -219,13 +219,13 @@ $grid-max-width:             1000px !default;
 $global-z-index: 		        1000 !default;
 
 $z-index-topbar-fixed:       $global-z-index !default;
-$z-index-datepicker:         $global-z-index !default;
 $z-index-sticky:             $global-z-index + 10 !default;
 $z-index-dropdown:           $global-z-index + 20 !default;
 $z-index-popover:            $global-z-index + 30 !default;
 $z-index-offcanvas:          $global-z-index + 90 !default;
 $z-index-dimmer:             $global-z-index + 100 !default;
 $z-index-modal:              $global-z-index + 110 !default;
+$z-index-datepicker:         $global-z-index + 120 !default;
 $z-index-pureview:           $global-z-index + 120 !default;
 $z-index-nprogress:          $global-z-index + 1000 !default;
 
@@ -353,7 +353,7 @@ $form-line-height:   1.2 !default;
 $form-font-size-sm:  $font-size-sm !default;
 $form-font-size-lg:  $font-size-lg !default;
 
-$input-padding:                  0.625em !default;
+$input-padding:                  0.5em !default;
 
 $input-bg:                        #fff !default;
 $input-focus-bg:                  #fefffe !default;
@@ -368,10 +368,6 @@ $input-color-placeholder:         $gray-light !default;
 
 $legend-color:                    $gray-dark !default;
 $legend-border-color:             #e5e5e5 !default;
-
-$form-select-height:      $form-font-size * $form-line-height + $form-font-size * 0.5 * 2 !default;
-$form-select-height-lg:   $form-font-size-lg * $form-line-height + $form-font-size-lg * 0.5 * 2 !default;
-$form-select-height-sm:   $form-font-size-sm * $form-line-height + $form-font-size-sm * 0.5 * 2 !default;
 
 
 // Form states and alerts
@@ -411,6 +407,7 @@ $img-thumbnail-bd-radius:  $global-radius !default;
 // =============================================================================
 
 $table-cell-padding:        .7rem !default;
+$table-cell-padding-compact:  .4rem !default;
 $table-line-height:         $global-line-height !default;
 $table-bg:                 transparent; // overall background-color
 $table-bg-striped:          #f9f9f9 !default;
