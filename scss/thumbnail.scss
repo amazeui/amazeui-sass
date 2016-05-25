@@ -44,8 +44,9 @@
 }
 
 // Image width
-.#{$ns}thumbnail,
-img.#{$ns}thumbnail {
+.#{$ns}thumbnail {
+  $selector: &;
+  img#{$selector},
   > img,
   a > img {
     max-width: 100%;
