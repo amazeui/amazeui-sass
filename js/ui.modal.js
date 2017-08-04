@@ -185,6 +185,7 @@ Modal.prototype.events = function() {
   var options = this.options;
   var _this = this;
   var $element = this.$element;
+  var $dimmer = this.dimmer.$element;
   var $ipt = $element.find('.am-modal-prompt-input');
   var $confirm = $element.find('[data-am-modal-confirm]');
   var $cancel = $element.find('[data-am-modal-cancel]');
@@ -210,24 +211,28 @@ Modal.prototype.events = function() {
 
   // Close Modal when dimmer clicked
   if (this.options.dimmer && this.options.closeViaDimmer && !this.isLoading) {
-    this.dimmer.$element.on('click.dimmer.modal.amui', function(e) {
+    $dimmer.on('click.dimmer.modal.amui', function(e) {
       _this.close();
     });
   }
 
   // Close Modal when button clicked
   $element.on('click.close.modal.amui', '[data-am-modal-close], .am-modal-btn', function(e) {
-      e.preventDefault();
-      var $this = $(this);
+    e.preventDefault();
+    var $this = $(this);
 
-      if ($this.is($confirm)) {
-        options.closeOnConfirm && _this.close();
-      } else if ($this.is($cancel)) {
-        options.closeOnCancel && _this.close();
-      } else {
-        _this.close();
-      }
-    });
+    if ($this.is($confirm)) {
+      options.closeOnConfirm && _this.close();
+    } else if ($this.is($cancel)) {
+      options.closeOnCancel && _this.close();
+    } else {
+      _this.close();
+    }
+  })
+  .on('click', function(e) {
+    e.stopPropagation();
+    $(e.target).is($element) && $dimmer.trigger('click.dimmer.modal.amui');
+  });
 
   $confirm.on('click.confirm.modal.amui',
     function() {
